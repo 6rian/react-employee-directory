@@ -30,7 +30,7 @@ class EmployeeDirectory extends React.Component {
           phone={employee.phone}
           location={`${employee.location.city}, ${employee.location.state}`}
           title="Front End Developer"
-          department="Engineering"
+          department={employee.department}
         />
       );
     });
