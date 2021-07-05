@@ -10,11 +10,11 @@ function DisplayOptions(props) {
         <span>
           <small>Filter by:</small>
         </span>
-        <select name="department">
+        <select name="department" onChange={props.handleFilter} value={props.filterByDepartment}>
           <option value="">Department</option>
           {departmentOptions}
         </select>
-        <select name="location">
+        <select name="location" onChange={props.handleFilter} value={props.filterByLocation}>
           <option value="">Location</option>
           {locationOptions}
         </select>

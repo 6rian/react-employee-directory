@@ -44,8 +44,18 @@ const getLocations = () => {
   return locations;
 }
 
+const filterByDepartment = department => {
+  return employees.filter(employee => employee.department === department);
+};
+
+const filterByLocation = location => {
+  return employees.filter(employee => employee.location.state === location);
+};
+
 export {
   getDepartments,
   getEmployees,
-  getLocations
+  getLocations,
+  filterByDepartment,
+  filterByLocation
 };

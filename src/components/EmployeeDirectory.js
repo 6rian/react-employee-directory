@@ -1,24 +1,61 @@
 import React from 'react';
 import DisplayOptions from './DisplayOptions';
 import EmployeeCard from './EmployeeCard';
-import {getEmployees, getDepartments, getLocations} from '../services/EmployeesService';
+import {
+  getEmployees,
+  getDepartments,
+  getLocations,
+  filterByDepartment,
+  filterByLocation
+} from '../services/EmployeesService';
 
 class EmployeeDirectory extends React.Component {
   constructor() {
     super();
     this.state = {
+      isLoading: true,
       employees: [],
-      isLoading: true
+      departments: [],
+      locations: [],
+      filterByDepartment: '',
+      filterByLocation: ''
     };
+    this.clearFilters = this.clearFilters.bind(this);
+    this.handleFilter = this.handleFilter.bind(this);
   }
 
   componentDidMount() {
     this.setState({
+      isLoading: false,
       employees: getEmployees(),
       departments: getDepartments(),
-      locations: getLocations(),
-      isLoading: false
+      locations: getLocations()
     });
+  }
+
+  clearFilters() {
+    this.setState({
+      filterByDepartment: '',
+      filterByLocation: '',
+      employees: getEmployees()
+    });
+  }
+
+  handleFilter(event) {
+    const {name, value} = event.target;
+    if (value === '') return this.clearFilters();
+    if (name === 'department') {
+      this.setState({
+        filterByDepartment: value,
+        employees: filterByDepartment(value)
+      });
+    }
+    if (name === 'location') {
+      this.setState({
+        filterByLocation: value,
+        employees: filterByLocation(value)
+      });
+    }
   }
 
   render() {
@@ -51,6 +88,9 @@ class EmployeeDirectory extends React.Component {
         <DisplayOptions
           departments={this.state.departments}
           locations={this.state.locations}
+          handleFilter={this.handleFilter}
+          filterByDepartment={this.state.filterByDepartment}
+          filterByLocation={this.state.filterByLocation}
         />
         {employeeCards}
       </div>
