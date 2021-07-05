@@ -1,0 +1,284 @@
+{
+  "results": [
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Herbert",
+        "last": "Gordon"
+      },
+      "location": {
+        "street": {
+          "number": 4031,
+          "name": "Mockingbird Ln"
+        },
+        "city": "Chattanooga",
+        "state": "West Virginia",
+        "country": "United States",
+        "postcode": 76068,
+        "coordinates": {
+          "latitude": "15.9254",
+          "longitude": "-84.6870"
+        },
+        "timezone": {
+          "offset": "+6:00",
+          "description": "Almaty, Dhaka, Colombo"
+        }
+      },
+      "email": "herbert.gordon@example.com",
+      "login": {
+        "uuid": "65c682fb-44aa-40aa-a426-992e61e3cb30",
+        "username": "blackkoala627",
+        "password": "cubswin",
+        "salt": "qsNOdOOz",
+        "md5": "bbf2d3df9b7f90b35c7eb04f31ac4846",
+        "sha1": "623b70f640a5759f28eb96d763cf5d21a522776d",
+        "sha256": "3eb060106d750fe86f7f475c7bfb2e3d932bc5269670bad0ad0f19b9b2dd67c2"
+      },
+      "dob": {
+        "date": "1977-07-31T22:50:00.341Z",
+        "age": 44
+      },
+      "registered": {
+        "date": "2004-11-06T14:32:36.289Z",
+        "age": 17
+      },
+      "phone": "(408)-276-2055",
+      "cell": "(007)-929-9000",
+      "id": {
+        "name": "SSN",
+        "value": "917-04-7344"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/89.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/89.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/89.jpg"
+      },
+      "nat": "US"
+    },
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Matthew",
+        "last": "Hansen"
+      },
+      "location": {
+        "street": {
+          "number": 1127,
+          "name": "Country Club Rd"
+        },
+        "city": "Lewiston",
+        "state": "Nevada",
+        "country": "United States",
+        "postcode": 39333,
+        "coordinates": {
+          "latitude": "12.8598",
+          "longitude": "28.7674"
+        },
+        "timezone": {
+          "offset": "+5:45",
+          "description": "Kathmandu"
+        }
+      },
+      "email": "matthew.hansen@example.com",
+      "login": {
+        "uuid": "00ce3fe0-10f1-4b16-8476-23b5b1278582",
+        "username": "smallelephant137",
+        "password": "laurence",
+        "salt": "FkCALlNF",
+        "md5": "d25ecf52d8e9c8838b6c60990cf2072b",
+        "sha1": "60b220df522f198532d52c6fba24f5fd95b62a13",
+        "sha256": "a98c3032f4f148d0c7df923f3dd4c4ec5e918e80f8f1a55a7f023f8dad9a5fc1"
+      },
+      "dob": {
+        "date": "1956-04-08T17:20:57.252Z",
+        "age": 65
+      },
+      "registered": {
+        "date": "2012-12-09T06:31:03.279Z",
+        "age": 9
+      },
+      "phone": "(546)-157-7601",
+      "cell": "(730)-892-5508",
+      "id": {
+        "name": "SSN",
+        "value": "167-92-6935"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/55.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/55.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/55.jpg"
+      },
+      "nat": "US"
+    },
+    {
+      "gender": "female",
+      "name": {
+        "title": "Mrs",
+        "first": "Isabella",
+        "last": "Spencer"
+      },
+      "location": {
+        "street": {
+          "number": 107,
+          "name": "Locust Rd"
+        },
+        "city": "Athens",
+        "state": "California",
+        "country": "United States",
+        "postcode": 74206,
+        "coordinates": {
+          "latitude": "-6.4323",
+          "longitude": "-25.2956"
+        },
+        "timezone": {
+          "offset": "+6:00",
+          "description": "Almaty, Dhaka, Colombo"
+        }
+      },
+      "email": "isabella.spencer@example.com",
+      "login": {
+        "uuid": "92a88c30-3989-4692-8cba-02c41ef4881d",
+        "username": "purplemeercat937",
+        "password": "loser1",
+        "salt": "bBKC0h88",
+        "md5": "2544aa339f25c7b1a87d94a499a26355",
+        "sha1": "cf7661767aa546b6e4cb5813a3cb734bb35d712e",
+        "sha256": "a61f7a83234255cc4d057aca184031f74cf72bab6e3f3fcce3d59e16875cdd3b"
+      },
+      "dob": {
+        "date": "1985-07-28T19:06:25.272Z",
+        "age": 36
+      },
+      "registered": {
+        "date": "2013-02-06T19:10:53.486Z",
+        "age": 8
+      },
+      "phone": "(530)-314-1824",
+      "cell": "(033)-973-5897",
+      "id": {
+        "name": "SSN",
+        "value": "225-45-6064"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/33.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/33.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/33.jpg"
+      },
+      "nat": "US"
+    },
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Sebastian",
+        "last": "Campbell"
+      },
+      "location": {
+        "street": {
+          "number": 9423,
+          "name": "E Pecan St"
+        },
+        "city": "Long Beach",
+        "state": "South Carolina",
+        "country": "United States",
+        "postcode": 45817,
+        "coordinates": {
+          "latitude": "-54.2009",
+          "longitude": "68.1754"
+        },
+        "timezone": {
+          "offset": "-11:00",
+          "description": "Midway Island, Samoa"
+        }
+      },
+      "email": "sebastian.campbell@example.com",
+      "login": {
+        "uuid": "be4ae489-c6da-4c07-81b0-797f1ff8a9ec",
+        "username": "biggoose149",
+        "password": "surgery",
+        "salt": "bz6tvOZq",
+        "md5": "72c4a208191c0e83c0be0672027f7bab",
+        "sha1": "0ae79a2296c95c99544cdad94eee943f0b354193",
+        "sha256": "eff2f9383660155c2a5154282dfd136eef949836697ec158e1142c64418dae91"
+      },
+      "dob": {
+        "date": "1982-02-04T23:02:55.982Z",
+        "age": 39
+      },
+      "registered": {
+        "date": "2017-05-08T13:24:46.498Z",
+        "age": 4
+      },
+      "phone": "(648)-767-6811",
+      "cell": "(983)-555-9766",
+      "id": {
+        "name": "SSN",
+        "value": "225-78-4580"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/34.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/34.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/34.jpg"
+      },
+      "nat": "US"
+    },
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Oscar",
+        "last": "Boyd"
+      },
+      "location": {
+        "street": {
+          "number": 1848,
+          "name": "Eason Rd"
+        },
+        "city": "Huntsville",
+        "state": "Texas",
+        "country": "United States",
+        "postcode": 41541,
+        "coordinates": {
+          "latitude": "21.8532",
+          "longitude": "-54.8242"
+        },
+        "timezone": {
+          "offset": "+5:00",
+          "description": "Ekaterinburg, Islamabad, Karachi, Tashkent"
+        }
+      },
+      "email": "oscar.boyd@example.com",
+      "login": {
+        "uuid": "9505263d-4704-45fb-a8ef-c33868b1a7e3",
+        "username": "sadostrich324",
+        "password": "jack1",
+        "salt": "aEdek0L1",
+        "md5": "ccbc7665996bfb2ff20b8e74a2b7eeeb",
+        "sha1": "5bbc9ce4fcece273ac1406de8adcb7c422fa1b68",
+        "sha256": "bd5a13d0b866498f24180d66d53db41cec59ec565450256780709da26259f49a"
+      },
+      "dob": {
+        "date": "1980-12-28T03:55:22.343Z",
+        "age": 41
+      },
+      "registered": {
+        "date": "2015-07-03T16:57:14.397Z",
+        "age": 6
+      },
+      "phone": "(088)-560-8799",
+      "cell": "(115)-801-3248",
+      "id": {
+        "name": "SSN",
+        "value": "977-73-7349"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/59.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/59.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/59.jpg"
+      },
+      "nat": "US"
+    }
+  ]
+}
