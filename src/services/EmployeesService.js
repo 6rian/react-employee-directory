@@ -1,17 +1,18 @@
 import employeesData from '../data/employees.json';
-import departments from '../data/departments.json';
+import roles from '../data/roles.json';
 
-const assignRandomDepartment = employee => {
-  const department = departments[Math.floor(Math.random() * departments.length)].name;
+const assignRandomRole = employee => {
+  const role = roles[Math.floor(Math.random() * roles.length)];
   return {
     ...employee,
-    department
+    department: role.department,
+    title: role.title
   };
 };
 
 const getEmployees = () => {
   const employees = employeesData.results.map(employee => {
-    return assignRandomDepartment(employee);
+    return assignRandomRole(employee);
   });
   return employees;
 };

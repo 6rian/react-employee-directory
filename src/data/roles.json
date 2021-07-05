@@ -1,0 +1,46 @@
+[
+  {
+      "department": "Administration",
+      "title": "Executive Assistant"
+  },
+  {
+      "department": "Engineering",
+      "title": "Software Engineer"
+  },
+  {
+      "department": "Finance",
+      "title": "Accountant"
+  },
+  {
+      "department": "Legal",
+      "title": "Lawyer"
+  },
+  {
+      "department": "Product",
+      "title": "Product Manager"
+  },
+  {
+      "department": "Design",
+      "title": "UX Designer"
+  },
+  {
+      "department": "Engineering",
+      "title": "Front End Developer"
+  },
+  {
+      "department": "Design",
+      "title": "Graphic Designer"
+  },
+  {
+      "department": "Engineering",
+      "title": "Database Administrator"
+  },
+  {
+      "department": "Engineering",
+      "title": "DevOps Engineer"
+  },
+  {
+      "department": "Engineering",
+      "title": "Security Engineer"
+  }
+]

@@ -8,10 +8,10 @@ function EmployeeCard(props) {
       </div>
       <div className="employee-info">
         <span className="name">{props.firstName} {props.lastName}</span>
-        <span className="dept">{props.department}</span>
-        <span className="title">{props.title}</span>
         <span className="email">{props.email}</span>
+        <span className="title">{props.title}</span>
         <span className="phone">{props.phone}</span>
+        <span className="dept">{props.department}</span>
         <span className="location">{props.location}</span>
       </div>
     </div>
