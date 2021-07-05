@@ -4,7 +4,7 @@ import EmployeeCard from './EmployeeCard';
 
 function EmployeeDirectory(props) {
   return (
-    <div className="employeeDirectory">
+    <div className="employee-directory">
       <DisplayOptions />
       <EmployeeCard />
       <EmployeeCard />

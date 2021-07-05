@@ -1,0 +1,90 @@
+/** helpers **/
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.circle-img {
+  border-radius: 50%;
+}
+
+/** header **/
+.header {
+  width: 100%;
+  height: 75px;
+  line-height: 75px;
+  background-color: #000;
+  color: #fff;
+  margin: 0 0 20px 0;
+  padding: 0 20px;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+/** employee directory **/
+.employee-directory {
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+/** display options **/
+.display-options {
+  padding: 10px;
+  /* display: grid;
+  grid-template-columns: 10% 20% 20% 50%   */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 0 15px 0;
+  border: none;
+}
+
+.filters {
+  min-width: 59%;
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.filters span {
+  padding-right: 10px;
+}
+
+.filters select {
+  flex-grow: 2;
+}
+
+.search {
+  width: 40%;
+  text-align: right;
+  padding-bottom: 5px;
+}
+.search input[type="search"] {
+  width: 100%;
+}
+
+/** employee card **/
+.employee-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-shadow: 0 0 15px #ccc;
+  border-radius: 20px;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+.employee-picture img {
+  width: 150px;
+}
+.employee-info {
+  margin-left: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(3, 33%);
+  column-gap: 20px;
+}
+.employee-info span {
+  align-self: center;
+}
