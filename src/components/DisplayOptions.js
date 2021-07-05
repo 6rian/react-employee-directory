@@ -2,6 +2,7 @@ import React from "react";
 
 function DisplayOptions(props) {
   const departmentOptions = props.departments.map((d, i) => <option key={i} value={d}>{d}</option>);
+  const locationOptions = props.locations.map((l, i) => <option key={i} value={l}>{l}</option>);
 
   return (
     <fieldset className="display-options">
@@ -15,6 +16,7 @@ function DisplayOptions(props) {
         </select>
         <select name="location">
           <option value="">Location</option>
+          {locationOptions}
         </select>
       </div>
       <div className="search">
