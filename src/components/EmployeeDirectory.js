@@ -1,7 +1,7 @@
 import React from 'react';
 import DisplayOptions from './DisplayOptions';
 import EmployeeCard from './EmployeeCard';
-import {getEmployees} from '../services/EmployeesService';
+import {getEmployees, getDepartments} from '../services/EmployeesService';
 
 class EmployeeDirectory extends React.Component {
   constructor() {
@@ -15,6 +15,7 @@ class EmployeeDirectory extends React.Component {
   componentDidMount() {
     this.setState({
       employees: getEmployees(),
+      departments: getDepartments(),
       isLoading: false
     });
   }
@@ -46,7 +47,7 @@ class EmployeeDirectory extends React.Component {
 
     return(
       <div className = "employee-directory" >
-        <DisplayOptions />
+        <DisplayOptions departments={this.state.departments} />
         {employeeCards}
       </div>
     );
