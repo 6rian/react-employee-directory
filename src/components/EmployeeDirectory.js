@@ -23,6 +23,7 @@ class EmployeeDirectory extends React.Component {
     const employeeCards = this.state.employees.map(employee => {
       return (
         <EmployeeCard
+          key={employee.login.uuid}
           pictureUrl={employee.picture.medium}
           firstName={employee.name.first}
           lastName={employee.name.last}
