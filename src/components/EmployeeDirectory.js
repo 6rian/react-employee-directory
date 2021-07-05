@@ -1,24 +1,26 @@
 import React from 'react';
 import DisplayOptions from './DisplayOptions';
 import EmployeeCard from './EmployeeCard';
-import employeesData from '../data/employees.json';
+import {getEmployees} from '../services/EmployeesService';
 
 class EmployeeDirectory extends React.Component {
   constructor() {
     super();
     this.state = {
-      employees: []
+      employees: [],
+      isLoading: true
     };
   }
 
   componentDidMount() {
     this.setState({
-      employees: employeesData
+      employees: getEmployees(),
+      isLoading: false
     });
   }
 
   render() {
-    const employeeCards = employeesData.results.map(employee => {
+    const employeeCards = this.state.employees.map(employee => {
       return (
         <EmployeeCard
           pictureUrl={employee.picture.medium}
@@ -32,6 +34,14 @@ class EmployeeDirectory extends React.Component {
         />
       );
     });
+
+    if (this.state.isLoading) {
+      return (
+        <div>
+          <h1>Loading...</h1>
+        </div>
+      );
+    }
 
     return(
       <div className = "employee-directory" >
