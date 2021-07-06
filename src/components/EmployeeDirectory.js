@@ -63,7 +63,6 @@ class EmployeeDirectory extends React.Component {
 
   handleSearch(event) {
     const term = event.target.value;
-    console.log(term);
     this.setState({
       searchTerm: term,
       employees: search(term),
@@ -106,7 +105,7 @@ class EmployeeDirectory extends React.Component {
           handleSearch={this.handleSearch}
           searchTerm={this.state.searchTerm}
         />
-        {employeeCards}
+        {this.state.searchTerm && this.state.employees.length === 0 ? <h3>No matches found...</h3> : employeeCards}
       </div>
     );
   }
