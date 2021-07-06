@@ -6,7 +6,8 @@ import {
   getDepartments,
   getLocations,
   filterByDepartment,
-  filterByLocation
+  filterByLocation,
+  search,
 } from '../services/EmployeesService';
 
 class EmployeeDirectory extends React.Component {
@@ -18,10 +19,12 @@ class EmployeeDirectory extends React.Component {
       departments: [],
       locations: [],
       filterByDepartment: '',
-      filterByLocation: ''
+      filterByLocation: '',
+      searchTerm: '',
     };
     this.clearFilters = this.clearFilters.bind(this);
     this.handleFilter = this.handleFilter.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   componentDidMount() {
@@ -29,7 +32,7 @@ class EmployeeDirectory extends React.Component {
       isLoading: false,
       employees: getEmployees(),
       departments: getDepartments(),
-      locations: getLocations()
+      locations: getLocations(),
     });
   }
 
@@ -37,25 +40,34 @@ class EmployeeDirectory extends React.Component {
     this.setState({
       filterByDepartment: '',
       filterByLocation: '',
-      employees: getEmployees()
+      employees: getEmployees(),
     });
   }
 
   handleFilter(event) {
-    const {name, value} = event.target;
+    const { name, value } = event.target;
     if (value === '') return this.clearFilters();
     if (name === 'department') {
       this.setState({
         filterByDepartment: value,
-        employees: filterByDepartment(value)
+        employees: filterByDepartment(value),
       });
     }
     if (name === 'location') {
       this.setState({
         filterByLocation: value,
-        employees: filterByLocation(value)
+        employees: filterByLocation(value),
       });
     }
+  }
+
+  handleSearch(event) {
+    const term = event.target.value;
+    console.log(term);
+    this.setState({
+      searchTerm: term,
+      employees: search(term),
+    });
   }
 
   render() {
@@ -83,14 +95,16 @@ class EmployeeDirectory extends React.Component {
       );
     }
 
-    return(
-      <div className = "employee-directory" >
+    return (
+      <div className="employee-directory">
         <DisplayOptions
           departments={this.state.departments}
           locations={this.state.locations}
           handleFilter={this.handleFilter}
           filterByDepartment={this.state.filterByDepartment}
           filterByLocation={this.state.filterByLocation}
+          handleSearch={this.handleSearch}
+          searchTerm={this.state.searchTerm}
         />
         {employeeCards}
       </div>

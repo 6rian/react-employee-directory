@@ -1,8 +1,16 @@
-import React from "react";
+import React from 'react';
 
 function DisplayOptions(props) {
-  const departmentOptions = props.departments.map((d, i) => <option key={i} value={d}>{d}</option>);
-  const locationOptions = props.locations.map((l, i) => <option key={i} value={l}>{l}</option>);
+  const departmentOptions = props.departments.map((d, i) => (
+    <option key={i} value={d}>
+      {d}
+    </option>
+  ));
+  const locationOptions = props.locations.map((l, i) => (
+    <option key={i} value={l}>
+      {l}
+    </option>
+  ));
 
   return (
     <fieldset className="display-options">
@@ -20,7 +28,13 @@ function DisplayOptions(props) {
         </select>
       </div>
       <div className="search">
-        <input type="search" placeholder="Search" name="search" />
+        <input
+          type="search"
+          placeholder="Search"
+          name="searchTerm"
+          onChange={props.handleSearch}
+          value={props.searchTerm}
+        />
       </div>
     </fieldset>
   );

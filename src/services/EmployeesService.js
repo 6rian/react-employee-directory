@@ -10,7 +10,7 @@ const assignRandomRole = employee => {
   return {
     ...employee,
     department: role.department,
-    title: role.title
+    title: role.title,
   };
 };
 
@@ -42,7 +42,7 @@ const getLocations = () => {
     }
   });
   return locations;
-}
+};
 
 const filterByDepartment = department => {
   return employees.filter(employee => employee.department === department);
@@ -52,10 +52,16 @@ const filterByLocation = location => {
   return employees.filter(employee => employee.location.state === location);
 };
 
-export {
-  getDepartments,
-  getEmployees,
-  getLocations,
-  filterByDepartment,
-  filterByLocation
+const search = term => {
+  if (term === '') return employees;
+  let matches = [];
+  employees.forEach(employee => {
+    const regex = new RegExp(`^${term}`, 'i');
+    if (regex.test(employee.name.first) || regex.test(employee.name.last)) {
+      matches.push(employee);
+    }
+  });
+  return matches;
 };
+
+export { getDepartments, getEmployees, getLocations, filterByDepartment, filterByLocation, search };
