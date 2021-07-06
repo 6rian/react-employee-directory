@@ -1,0 +1,18 @@
+{
+  "name": "react-employee-directory",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client": "cd client && npm run build",
+    "server": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wbgriffin/react-employee-directory.git"
+  },
+  "author": "Brian Griffin <wbgriffin@pm.me>",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
