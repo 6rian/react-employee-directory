@@ -1,17 +1,16 @@
 const express = require('express');
 const path = require('path');
+const apiRoutes = require('./routes/api');
 
 const app = express();
 
 // Server static assets from client
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-app.get('/api', (req, res) => {
-  res.json({message: 'hello world'});
-});
+app.use('/api', apiRoutes);
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+  res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
 const port = process.env.PORT || 5000;
