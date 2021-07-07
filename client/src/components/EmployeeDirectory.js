@@ -8,7 +8,9 @@ import {
   filterByDepartment,
   filterByLocation,
   search,
+  totalEmployees
 } from '../services/EmployeesService';
+import ResultsCount from './ResultsCount';
 
 class EmployeeDirectory extends React.Component {
   constructor() {
@@ -20,7 +22,7 @@ class EmployeeDirectory extends React.Component {
       locations: [],
       filterByDepartment: '',
       filterByLocation: '',
-      searchTerm: '',
+      searchTerm: ''
     };
     this.clearFilters = this.clearFilters.bind(this);
     this.handleFilter = this.handleFilter.bind(this);
@@ -32,7 +34,7 @@ class EmployeeDirectory extends React.Component {
       isLoading: false,
       employees: await getEmployees(),
       departments: getDepartments(),
-      locations: getLocations(),
+      locations: getLocations()
     });
   }
 
@@ -105,7 +107,14 @@ class EmployeeDirectory extends React.Component {
           handleSearch={this.handleSearch}
           searchTerm={this.state.searchTerm}
         />
-        {this.state.searchTerm && this.state.employees.length === 0 ? <h3>No matches found...</h3> : employeeCards}
+        <ResultsCount total={totalEmployees} showing={this.state.employees.length} />
+        {(
+          this.state.searchTerm && this.state.employees.length === 0
+        ) ? (
+          <h3>No matches found...</h3>
+        ) : (
+          employeeCards
+        )}
       </div>
     );
   }

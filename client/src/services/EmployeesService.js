@@ -3,6 +3,7 @@ import roles from '../data/roles.json';
 let employees = [];
 let departments = [];
 let locations = [];
+let totalEmployees = 0;
 
 const assignRandomRole = employee => {
   const role = roles[Math.floor(Math.random() * roles.length)];
@@ -19,6 +20,7 @@ const getEmployees = async () => {
   if (response.ok) {
     const json = await response.json();
     employees = json.results.map(employee => assignRandomRole(employee));
+    totalEmployees = employees.length;
   }
   return employees;
 };
@@ -65,4 +67,12 @@ const search = term => {
   return matches;
 };
 
-export { getDepartments, getEmployees, getLocations, filterByDepartment, filterByLocation, search };
+export {
+  getDepartments,
+  getEmployees,
+  getLocations,
+  filterByDepartment,
+  filterByLocation,
+  search,
+  totalEmployees,
+};
