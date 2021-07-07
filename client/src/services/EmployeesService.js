@@ -31,7 +31,7 @@ const getDepartments = () => {
       departments.push(employee.department);
     }
   });
-  return departments;
+  return departments.sort();
 };
 
 const getLocations = () => {
@@ -42,7 +42,7 @@ const getLocations = () => {
       locations.push(employee.location.state);
     }
   });
-  return locations;
+  return locations.sort();
 };
 
 const filterByDepartment = department => {
