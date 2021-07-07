@@ -1,4 +1,3 @@
-import employeesData from '../data/employees.json';
 import roles from '../data/roles.json';
 
 let employees = [];
@@ -14,17 +13,19 @@ const assignRandomRole = employee => {
   };
 };
 
-const getEmployees = () => {
+const getEmployees = async () => {
   if (employees.length > 0) return employees;
-  employees = employeesData.results.map(employee => {
-    return assignRandomRole(employee);
-  });
+  const response = await fetch('/api/employees');
+  if (response.ok) {
+    const json = await response.json();
+    employees = json.results.map(employee => assignRandomRole(employee));
+  }
   return employees;
 };
 
 const getDepartments = () => {
   if (departments.length > 0) return departments;
-  if (employees.length === 0) employees = getEmployees();
+  if (employees.length === 0) return [];
   employees.forEach(employee => {
     if (!departments.includes(employee.department)) {
       departments.push(employee.department);
@@ -35,7 +36,7 @@ const getDepartments = () => {
 
 const getLocations = () => {
   if (locations.length > 0) return locations;
-  if (employees.length === 0) employees = getEmployees();
+  if (employees.length === 0) return [];
   employees.forEach(employee => {
     if (!locations.includes(employee.location.state)) {
       locations.push(employee.location.state);

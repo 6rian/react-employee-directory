@@ -27,10 +27,10 @@ class EmployeeDirectory extends React.Component {
     this.handleSearch = this.handleSearch.bind(this);
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     this.setState({
       isLoading: false,
-      employees: getEmployees(),
+      employees: await getEmployees(),
       departments: getDepartments(),
       locations: getLocations(),
     });
@@ -70,6 +70,14 @@ class EmployeeDirectory extends React.Component {
   }
 
   render() {
+    if (this.state.isLoading) {
+      return (
+        <div>
+          <h1>Loading...</h1>
+        </div>
+      );
+    }
+
     const employeeCards = this.state.employees.map(employee => {
       return (
         <EmployeeCard
@@ -85,14 +93,6 @@ class EmployeeDirectory extends React.Component {
         />
       );
     });
-
-    if (this.state.isLoading) {
-      return (
-        <div>
-          <h1>Loading...</h1>
-        </div>
-      );
-    }
 
     return (
       <div className="employee-directory">
