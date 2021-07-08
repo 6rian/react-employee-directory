@@ -1,35 +1,20 @@
 .display-options {
   padding: 10px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0 0 15px 0;
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr 2fr;
+  column-gap: 10px;
   border: none;
+  margin-bottom: 20px;
 }
 
-.filters {
-  min-width: 59%;
-  padding-bottom: 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.filters span {
-  padding-right: 10px;
-}
-
-.filters select {
-  flex-grow: 2;
-}
-
-.search {
-  width: 40%;
-  text-align: right;
-  padding-bottom: 5px;
-}
-
-.search input[type="search"] {
-  width: 100%;
+@media (max-width: 425px) {
+  .display-options {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 10px;
+    border: none;
+  }
+  .display-options>span {
+    display: none;
+  }
 }

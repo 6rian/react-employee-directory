@@ -15,7 +15,6 @@ function DisplayOptions(props) {
 
   return (
     <fieldset className="display-options">
-      <div className="filters">
         <span>
           <small>Filter by:</small>
         </span>
@@ -27,8 +26,6 @@ function DisplayOptions(props) {
           <option value="">Location</option>
           {locationOptions}
         </select>
-      </div>
-      <div className="search">
         <input
           type="search"
           placeholder="Search"
@@ -36,7 +33,6 @@ function DisplayOptions(props) {
           onChange={props.handleSearch}
           value={props.searchTerm}
         />
-      </div>
     </fieldset>
   );
 }
