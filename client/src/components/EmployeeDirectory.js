@@ -100,6 +100,7 @@ class EmployeeDirectory extends React.Component {
           location={`${employee.location.city}, ${employee.location.state}`}
           title={employee.title}
           department={employee.department}
+          searchTerm={this.state.searchTerm}
         />
       );
     });

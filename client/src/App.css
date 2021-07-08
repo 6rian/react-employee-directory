@@ -7,3 +7,9 @@
 .circle-img {
   border-radius: 50%;
 }
+
+.highlightSearchTerm {
+  background-color: yellowgreen;
+  font-weight: bold;
+  padding: 2px;
+}
