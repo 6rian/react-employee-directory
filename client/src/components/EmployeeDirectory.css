@@ -2,3 +2,8 @@
   margin: 0 auto;
   max-width: 80%;
 }
+
+.filter-status {
+  text-align: center;
+  margin: -10px auto 15px auto;
+}

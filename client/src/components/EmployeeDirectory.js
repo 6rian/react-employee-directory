@@ -11,6 +11,7 @@ import {
   totalEmployees
 } from '../services/EmployeesService';
 import ResultsCount from './ResultsCount';
+import ClearFilter from './ClearFilter';
 import './EmployeeDirectory.css';
 
 class EmployeeDirectory extends React.Component {
@@ -25,7 +26,8 @@ class EmployeeDirectory extends React.Component {
       filterByLocation: '',
       searchTerm: ''
     };
-    this.clearFilters = this.clearFilters.bind(this);
+    this.clearAllFilters = this.clearAllFilters.bind(this);
+    this.handleClearFilter = this.handleClearFilter.bind(this);
     this.handleFilter = this.handleFilter.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
   }
@@ -39,17 +41,22 @@ class EmployeeDirectory extends React.Component {
     });
   }
 
-  clearFilters() {
+  async clearAllFilters() {
     this.setState({
       filterByDepartment: '',
       filterByLocation: '',
-      employees: getEmployees(),
+      searchTerm: '',
+      employees: await getEmployees(),
     });
+  }
+
+  handleClearFilter() {
+    this.clearAllFilters();
   }
 
   handleFilter(event) {
     const { name, value } = event.target;
-    if (value === '') return this.clearFilters();
+    if (value === '') return this.clearAllFilters();
     if (name === 'department') {
       this.setState({
         filterByDepartment: value,
@@ -97,6 +104,12 @@ class EmployeeDirectory extends React.Component {
       );
     });
 
+    const filters = {
+      filterByDepartment: this.state.filterByDepartment,
+      filterByLocation: this.state.filterByLocation,
+      searchTerm: this.state.searchTerm
+    };
+
     return (
       <div className="employee-directory">
         <DisplayOptions
@@ -108,7 +121,10 @@ class EmployeeDirectory extends React.Component {
           handleSearch={this.handleSearch}
           searchTerm={this.state.searchTerm}
         />
-        <ResultsCount total={totalEmployees} showing={this.state.employees.length} />
+        <div className="filter-status">
+          <ResultsCount total={totalEmployees} showing={this.state.employees.length} />
+          <ClearFilter filters={filters} handleClearFilter={this.handleFilter} />
+        </div>
         {(
           this.state.searchTerm && this.state.employees.length === 0
         ) ? (
