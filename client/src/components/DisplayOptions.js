@@ -1,4 +1,5 @@
 import React from 'react';
+import './DisplayOptions.css';
 
 function DisplayOptions(props) {
   const departmentOptions = props.departments.map((d, i) => (

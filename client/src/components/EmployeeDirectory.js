@@ -11,6 +11,7 @@ import {
   totalEmployees
 } from '../services/EmployeesService';
 import ResultsCount from './ResultsCount';
+import './EmployeeDirectory.css';
 
 class EmployeeDirectory extends React.Component {
   constructor() {
