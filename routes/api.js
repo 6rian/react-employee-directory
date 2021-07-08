@@ -23,14 +23,4 @@ router.use('/graphql', graphqlHTTP({
   graphiql: true
 }));
 
-router.get('/employees', async (req, res) => {
-  try {
-    const response = await axios.get('https://randomuser.me/api/?nat=us&results=100');
-    res.json({ results: response.data.results });
-  } catch (error) {
-    res.json({ error: 'Error fetching employees' });
-    console.error(error);
-  }
-});
-
 module.exports = router;

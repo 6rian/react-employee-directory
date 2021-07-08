@@ -1,3 +1,4 @@
+import {request, gql} from 'graphql-request';
 import roles from '../data/roles.json';
 
 let employees = [];
@@ -16,12 +17,33 @@ const assignRandomRole = employee => {
 
 const getEmployees = async () => {
   if (employees.length > 0) return employees;
-  const response = await fetch('/api/employees');
-  if (response.ok) {
-    const json = await response.json();
-    employees = json.results.map(employee => assignRandomRole(employee));
-    totalEmployees = employees.length;
-  }
+
+  const query = gql`
+    {
+      getEmployees(results: 100) {
+        name {
+          first
+          last
+        }
+        location {
+          city
+          state
+        }
+        email
+        login {
+          uuid
+        }
+        phone
+        picture{
+          medium
+        }
+      }
+    }
+  `;
+
+  const data = await request('/api/graphql', query);
+  employees = data.getEmployees.map(employee => assignRandomRole(employee));
+  totalEmployees = employees.length;
   return employees;
 };
 
