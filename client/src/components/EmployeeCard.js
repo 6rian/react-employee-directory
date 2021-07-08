@@ -8,27 +8,27 @@ function EmployeeCard(props) {
       </div>
       <div className="employee-info">
         <span className="name">
-          <small className="field-label">Name:</small>
+          <small>Name:</small>
           {props.firstName} {props.lastName}
         </span>
         <span className="email">
-          <small className="field-label">Email:</small>
+          <small>Email:</small>
           {props.email}
         </span>
         <span className="title">
-          <small className="field-label">Title:</small>
+          <small>Title:</small>
           {props.title}
         </span>
         <span className="phone">
-          <small className="field-label">Phone:</small>
+          <small>Phone:</small>
           {props.phone}
         </span>
         <span className="dept">
-          <small className="field-label">Department:</small>
+          <small>Department:</small>
           {props.department}
         </span>
         <span className="location">
-          <small className="field-label">Location:</small>
+          <small>Location:</small>
           {props.location}
         </span>
       </div>

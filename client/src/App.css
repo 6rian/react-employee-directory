@@ -118,9 +118,18 @@
     padding-left: 0;
   }
 }
+.employee-info span>small {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+@media (max-width: 875px) {
+  .employee-card {
+    flex-direction: column;
+  }
+}
 @media (max-width: 500px) {
   .employee-info {
     grid-template-columns: 1fr;
-    padding: 10px 20px;
   }
 }
