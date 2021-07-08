@@ -28,7 +28,7 @@ function DisplayOptions(props) {
         </select>
         <input
           type="search"
-          placeholder="Search"
+          placeholder="Search by First or Last Name"
           name="searchTerm"
           onChange={props.handleSearch}
           value={props.searchTerm}

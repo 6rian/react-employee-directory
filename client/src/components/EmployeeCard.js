@@ -14,7 +14,7 @@ function EmployeeCard(props) {
         </span>
         <span className="email">
           <small>Email:</small>
-          {props.email}
+          <a href={`mailto:${props.email}`}>{props.email}</a>
         </span>
         <span className="title">
           <small>Title:</small>
@@ -22,7 +22,7 @@ function EmployeeCard(props) {
         </span>
         <span className="phone">
           <small>Phone:</small>
-          {props.phone}
+          <a href={`tel:${props.phone}`}>{props.phone}</a>
         </span>
         <span className="dept">
           <small>Department:</small>
