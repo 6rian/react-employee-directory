@@ -48,6 +48,7 @@
   .employee-info .employee-info-field {
     margin-bottom: 10px;
     padding-left: 0;
+    display: block;
   }
 }
 
@@ -57,14 +58,8 @@
   margin-bottom: 5px;
 }
 
-@media (max-width: 875px) {
-  .employee-card {
-    flex-direction: column;
-  }
-}
-
 @media (max-width: 500px) {
   .employee-info {
-    grid-template-columns: 1fr;
+    display: unset;
   }
 }
