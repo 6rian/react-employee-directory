@@ -8,6 +8,7 @@
     "client": "cd client && npm run start",
     "dev": "concurrently --kill-others-on-fail \"npm run dev:server\" \"npm run client\"",
     "dev:server": "nodemon server.js",
+    "heroku-postbuild": "cd client && npm install && npm run build",
     "start": "node server.js"
   },
   "repository": {
