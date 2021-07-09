@@ -5,6 +5,13 @@
   column-gap: 10px;
   border: none;
   margin-bottom: 20px;
+  align-items: center;
+}
+
+.display-options select,
+.display-options input[type=search] {
+  font-size: 1em;
+  padding: 3px;
 }
 
 @media (max-width: 425px) {

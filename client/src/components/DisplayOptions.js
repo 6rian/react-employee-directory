@@ -15,7 +15,7 @@ function DisplayOptions(props) {
 
   return (
     <fieldset className="display-options">
-        <span>
+        <span className="filter-label">
           <small>Filter by:</small>
         </span>
         <select name="department" onChange={props.handleFilter} value={props.filterByDepartment}>
