@@ -1,4 +1,5 @@
 import React from 'react';
+import Loader from 'react-loader-spinner';
 import DisplayOptions from './DisplayOptions';
 import EmployeeCard from './EmployeeCard';
 import {
@@ -82,8 +83,14 @@ class EmployeeDirectory extends React.Component {
   render() {
     if (this.state.isLoading) {
       return (
-        <div>
-          <h1>Loading...</h1>
+        <div className="loading">
+          <h2>Loading...</h2>
+          <Loader
+            type="ThreeDots"
+            color="orange"
+            width={175}
+            height={125}
+          />
         </div>
       );
     }
