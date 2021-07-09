@@ -8,7 +8,12 @@
     "client": "cd client && npm run start",
     "dev": "concurrently --kill-others-on-fail \"npm run dev:server\" \"npm run client\"",
     "dev:server": "nodemon server.js",
+<<<<<<< HEAD
     "start": "node server.js"
+=======
+    "server": "node server.js",
+    "start": "concurrently --kill-others-on-fail \"npm run build\" \"npm run server\""
+>>>>>>> d3da5fa9574f255b388f1dd5e9264d2b68882918
   },
   "repository": {
     "type": "git",
