@@ -44,7 +44,7 @@ const getEmployees = async () => {
   const data = await request('/api/graphql', query);
   employees = data.getEmployees.map(employee => assignRandomRole(employee));
   totalEmployees = employees.length;
-  return employees;
+  return employees.sort(sortByLastName);
 };
 
 const getDepartments = () => {
@@ -89,6 +89,46 @@ const search = term => {
   return matches;
 };
 
+const sortByFirstName = (a, b) => {
+  if (a === b) return 0;
+  if (a.name.first < b.name.first) {
+    return -1;
+  }
+  return 1;
+};
+
+const sortByFirstNameDesc = (a, b) => {
+  if (a === b) return 0;
+  if (a.name.first > b.name.first) {
+    return -1;
+  }
+  return 1;
+};
+
+const sortByLastName = (a, b) => {
+  if (a === b) return 0;
+  if (a.name.last < b.name.last) {
+    return -1;
+  }
+  return 1;
+};
+
+const sortByLastNameDesc = (a, b) => {
+  if (a === b) return 0;
+  if (a.name.last > b.name.last) {
+    return -1;
+  }
+  return 1;
+};
+
+const sortByDepartment = (a, b) => {
+  if (a === b) return 0;
+  if (a.department < b.department) {
+    return -1;
+  }
+  return 1;
+};
+
 export {
   getDepartments,
   getEmployees,
@@ -96,5 +136,10 @@ export {
   filterByDepartment,
   filterByLocation,
   search,
+  sortByFirstName,
+  sortByFirstNameDesc,
+  sortByLastName,
+  sortByLastNameDesc,
+  sortByDepartment,
   totalEmployees,
 };

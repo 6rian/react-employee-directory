@@ -1,7 +1,7 @@
 .display-options {
   padding: 10px;
   display: grid;
-  grid-template-columns: 60px 1fr 1fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr 2fr;
   column-gap: 10px;
   border: none;
   margin-bottom: 20px;
@@ -14,14 +14,22 @@
   padding: 3px;
 }
 
+@media (max-width: 768px) {
+  .display-options {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+  .display-options input[type=search] {
+    grid-column: 2 / 2;
+  }
+}
+
 @media (max-width: 425px) {
   .display-options {
-    display: grid;
     grid-template-columns: 100%;
-    grid-gap: 10px;
     border: none;
   }
-  .display-options>span {
-    display: none;
+  .display-options input[type=search] {
+    grid-column: unset;
   }
 }
