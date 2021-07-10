@@ -15,11 +15,11 @@ function DisplayOptions(props) {
 
   return (
     <fieldset className="display-options">
-        <select name="department" value={props.filterByDepartment} onChange={props.handleFilter}>
+        <select name="filterByDepartment" value={props.filterByDepartment} onChange={props.handleFilter}>
           <option value="">Department</option>
           {departmentOptions}
         </select>
-        <select name="location" value={props.filterByLocation} onChange={props.handleFilter}>
+        <select name="filterByLocation" value={props.filterByLocation} onChange={props.handleFilter}>
           <option value="">Location</option>
           {locationOptions}
         </select>

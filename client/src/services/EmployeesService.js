@@ -69,13 +69,15 @@ const getLocations = () => {
   return locations.sort();
 };
 
-const filterByDepartment = department => {
-  return employees.filter(employee => employee.department === department);
-};
-
-const filterByLocation = location => {
-  return employees.filter(employee => employee.location.state === location);
-};
+const filterBy = (name, value) => {
+  if (name === 'department') {
+    return employees.filter(employee => employee.department === value);
+  }
+  if (name === 'location') {
+    return employees.filter(employee => employee.location.state === value);
+  }
+  return employees;
+}
 
 const search = term => {
   if (term === '') return employees;
@@ -133,8 +135,7 @@ export {
   getDepartments,
   getEmployees,
   getLocations,
-  filterByDepartment,
-  filterByLocation,
+  filterBy,
   search,
   sortByFirstName,
   sortByFirstNameDesc,

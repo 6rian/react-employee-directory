@@ -10,6 +10,10 @@ import './EmployeeDirectory.css';
 class EmployeeDirectory extends React.Component {
   constructor() {
     super();
+    this.filters = {
+      filterByDepartment: 'department',
+      filterByLocation: 'location'
+    };
     this.state = {
       isLoading: true,
       employees: [],
@@ -49,21 +53,21 @@ class EmployeeDirectory extends React.Component {
     this.clearAllFilters();
   }
 
-  handleFilter(event) {
+  async handleFilter(event) {
     const {name, value} = event.target;
-    if (value === '') return this.clearAllFilters();
-    if (name === 'department') {
-      this.setState({
-        filterByDepartment: value,
-        employees: EmployeesService.filterByDepartment(value)
-      });
+    await this.clearAllFilters();
+    if (value === '') return false;
+    let employees = EmployeesService.filterBy(this.filters[name], value);
+
+    // preserve sort order
+    if (this.state.sortBy) {
+      employees.sort(EmployeesService[this.state.sortBy]);
     }
-    if (name === 'location') {
-      this.setState({
-        filterByLocation: value,
-        employees: EmployeesService.filterByLocation(value)
-      });
-    }
+
+    this.setState({
+      [name]: value,
+      employees: employees
+    });
   }
 
   handleSearch(event) {
@@ -74,13 +78,23 @@ class EmployeeDirectory extends React.Component {
     });
   }
 
-  handleSort(event) {
+  async handleSort(event) {
     let {value} = event.target;
     if (value === '') value = 'sortByLastName';
+
     this.setState(prevState => {
+      let employees = prevState.employees;
+    
+      // preserve filter if one is set before sorting
+      Object.keys(this.filters).forEach(filterName => {
+        if (prevState[filterName]) {
+          employees = EmployeesService.filterBy(this.filters[filterName], prevState[filterName]);
+        }
+      });
+
       return {
         sortBy: value,
-        employees: prevState.employees.sort(EmployeesService[value])
+        employees: employees.sort(EmployeesService[value])
       };
     });
   }
