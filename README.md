@@ -15,9 +15,10 @@ http://localhost:3000/
 
 ## Technologies Used
 
-* [React](https://reactjs.org/)
 * [create-react-app](https://github.com/facebook/create-react-app)
+* [React](https://reactjs.org/)
 * [NodeJS](https://nodejs.org/en/)
+* [Express](https://expressjs.com/)
 * [GraphQL](https://graphql.org/)
 
 ## Demo
